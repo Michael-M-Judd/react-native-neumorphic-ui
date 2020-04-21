@@ -1,0 +1,17 @@
+{
+  "name": "neumorphic",
+  "displayName": "neumorphic",
+  "expo": {
+    "name": "neumorphic",
+    "slug": "neumorphic",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
