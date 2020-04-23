@@ -22,7 +22,7 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "storybook": "start-storybook -p 7007",
     "postinstall": "react-native link react-native-linear-gradient",
     "lint:js": "eslint src --ext ts,tsx,js,jsx",
