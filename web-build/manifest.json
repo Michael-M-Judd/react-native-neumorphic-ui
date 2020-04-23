@@ -1,0 +1,8 @@
+{
+  "description": "A react-native UI library implementing neumorphic design principles",
+  "display": "standalone",
+  "lang": "en",
+  "name": "neumorphic",
+  "short_name": "neumorphic",
+  "start_url": "/?utm_source=web_app_manifest"
+}
