@@ -2,11 +2,12 @@ import React from 'react';
 import { TouchableOpacity, TouchableOpacityProps, Text, View } from 'react-native';
 import styled, { useTheme } from 'styled-components/native';
 import LinearGradient from 'react-native-linear-gradient';
-import { StyledProps, getThemeColor, hexToRgba } from '../theme';
+import { space } from 'styled-system';
+import { StyledProps, getThemeColor, hexToRgba, Margin } from '../theme';
 
 type Size = 'small' | 'regular' | 'large';
 
-export interface ButtonProps extends TouchableOpacityProps {
+export interface ButtonProps extends TouchableOpacityProps, Margin {
   children: React.ReactNode | string;
   size?: Size;
 }
@@ -14,14 +15,13 @@ export interface ButtonProps extends TouchableOpacityProps {
 const getBoxShadow = ({ theme }: StyledProps): string =>
   theme.button?.boxShadow || '3px 3px 13px #000000';
 
-const getBorderRadius = ({ theme }: StyledProps) =>
-  theme.button?.borderRadius || 50;
+const getBorderRadius = ({ theme }: StyledProps) => theme.button?.borderRadius || 50;
 
-const getFontStyle = ({theme}: StyledProps) => theme.typography.fontFamily;
+const getFontStyle = ({ theme }: StyledProps) => theme.typography.fontFamily;
 
-const getFontWeight = ({theme}: StyledProps) => theme.typography.fontWeightBold;
+const getFontWeight = ({ theme }: StyledProps) => theme.typography.fontWeightBold;
 
-const getFontSize = ({theme}: StyledProps) => theme.typography.fontSize;
+const getFontSize = ({ theme }: StyledProps) => theme.typography.fontSize;
 
 const getFontColor = getThemeColor('primary', 'contrastText');
 
@@ -36,22 +36,23 @@ const StyledTouchableOpacity = styled(TouchableOpacity)`
   border: 2px solid ${getThemeColor('primary', 'light')};
   border-radius: ${getBorderRadius}px;
   position: relative;
-`
+  ${space}
+`;
 
 const StyledBottomShadow = styled(View)`
-  box-shadow: 7px 7px 16px ${({theme}) => hexToRgba(theme.palette.primary.dark, 0.35)};
+  box-shadow: 7px 7px 16px ${({ theme }) => hexToRgba(theme.palette.primary.dark, 0.35)};
 `;
 
 export const StyledTopShadow = styled(View)`
   box-shadow: -4px -4px 8px ${({ theme }) => hexToRgba(theme.palette.primary.light, 0.3)};
-`
+`;
 
 const StyledText = styled(Text)`
   font-family: ${getFontStyle};
   font-weight: ${getFontWeight};
   font-size: ${getFontSize}px;
   color: ${getFontColor};
-`
+`;
 
 const StyledGradient = styled(LinearGradient)`
   box-shadow: ${getBoxShadow};
@@ -64,11 +65,6 @@ const StyledOuterGradient = styled(LinearGradient)`
   border-radius: ${getBorderRadius}px;
 `;
 
-const StyledShadow = styled(View)`
-  border: 0 solid ${getThemeColor('primary', 'light')};
-  border-radius: ${getBorderRadius}px;
-`;
-
 export const Button = ({ children, onPress, style, ...props }: ButtonProps) => {
   const theme = useTheme();
 
@@ -76,19 +72,21 @@ export const Button = ({ children, onPress, style, ...props }: ButtonProps) => {
     <StyledTouchableOpacity {...props} onPress={onPress} style={style}>
       <StyledTopShadow>
         <StyledBottomShadow>
-        <StyledOuterGradient
-          colors={[theme.palette.primary.main, theme.palette.primary.light]}
-          start={{x: 0.3, y: -1.3}} end={{x: 2, y: 3}}
-        >
-          <StyledInnerButton>
-            <StyledGradient 
-              colors={[theme.palette.primary.light, theme.palette.primary.main]}
-              start={{x: 0.3, y: -1.3}} end={{x: 0.5, y: 1.4}}
-            >
-              <StyledText>{children}</StyledText>
-            </StyledGradient>
-          </StyledInnerButton>
-        </StyledOuterGradient>
+          <StyledOuterGradient
+            colors={[theme.palette.primary.main, theme.palette.primary.light]}
+            start={{ x: 0.3, y: -1.3 }}
+            end={{ x: 2, y: 3 }}
+          >
+            <StyledInnerButton>
+              <StyledGradient
+                colors={[theme.palette.primary.light, theme.palette.primary.main]}
+                start={{ x: 0.3, y: -1.3 }}
+                end={{ x: 0.5, y: 1.4 }}
+              >
+                <StyledText>{children}</StyledText>
+              </StyledGradient>
+            </StyledInnerButton>
+          </StyledOuterGradient>
         </StyledBottomShadow>
       </StyledTopShadow>
     </StyledTouchableOpacity>

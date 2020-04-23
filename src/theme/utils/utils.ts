@@ -1,4 +1,4 @@
-import { StyledProps, DefaultTheme } from '../theme.types';
+import { StyledProps, DefaultTheme, SpaceProps } from '../theme.types';
 
 type Palettes = keyof DefaultTheme['palette'];
 
@@ -13,8 +13,7 @@ export const getThemeColor = <T extends Palettes>(
     return '';
   }
 
-  // @ts-ignore
-  return themeColor;
+  return String(themeColor);
 };
 
 const hexToRgb = (hex: string): { r: number; g: number; b: number } | null => {
@@ -39,3 +38,31 @@ export const hexToRgba = (hex: string, alpha?: number): string => {
 
   return '';
 };
+
+export const getMarginProps = ({
+  margin,
+  marginBottom,
+  marginTop,
+  marginLeft,
+  marginRight
+}: SpaceProps) => ({
+  margin,
+  marginBottom,
+  marginTop,
+  marginLeft,
+  marginRight
+});
+
+export const getPaddingProps = ({
+  padding,
+  paddingBottom,
+  paddingTop,
+  paddingLeft,
+  paddingRight
+}: SpaceProps) => ({
+  padding,
+  paddingBottom,
+  paddingTop,
+  paddingLeft,
+  paddingRight
+});
