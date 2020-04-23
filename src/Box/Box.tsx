@@ -12,7 +12,7 @@ import { View } from 'react-native';
 import styled from 'styled-components/native';
 import { SpaceProps } from '../theme';
 
-interface BoxProps extends SpaceProps, LayoutProps, FlexboxProps, PositionProps {}
+export interface BoxProps extends SpaceProps, LayoutProps, FlexboxProps, PositionProps {}
 
 const StyledView = styled(View)<BoxProps>(compose(space, layout, flexbox, position));
 

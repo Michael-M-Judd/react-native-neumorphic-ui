@@ -13,7 +13,10 @@
   ],
   "description": "A react-native UI library implementing neumorphic design principles",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -26,7 +29,10 @@
     "lint:css": "stylelint 'src/**/*.ts*'",
     "lint": "yarn lint:css yarn lint:js",
     "lint:fix": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn lint && yarn test",
+    "preversion": "yarn lint"
   },
   "repository": {
     "type": "git",
