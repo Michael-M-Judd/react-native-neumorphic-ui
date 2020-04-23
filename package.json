@@ -1,4 +1,15 @@
 {
+  "name": "react-native-neumorphic-ui",
+  "keywords": [
+    "neumorphic-ui",
+    "neumorphism",
+    "skeumorphism",
+    "skeumorphic ui",
+    "react-native",
+    "component",
+    "library"
+  ],
+  "description": "A react-native UI library implementing neumorphic design principles",
   "main": "index.js",
   "scripts": {
     "android": "react-native run-android",
