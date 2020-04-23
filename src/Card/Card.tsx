@@ -11,6 +11,7 @@ export interface CardProps extends TouchableOpacityProps, SpaceProps {
 
 const getCardBorderRadius = ({ theme }: StyledProps): number => theme.card?.borderRadius || 8;
 
+/* stylelint-disable */
 const StyledTouchableOpacity = styled(TouchableOpacity)`
   background-color: ${getThemeColor('primary', 'main')};
   border-radius: ${getCardBorderRadius}px;
@@ -24,6 +25,7 @@ const StyledLinearGradient = styled(LinearGradient)<SpaceProps>`
   padding: 20px;
   ${space}
 `;
+/* stylelint-enable */
 
 const StyledBottomShadow = styled(View)`
   box-shadow: 7px 7px 16px ${({ theme }) => hexToRgba(theme.palette.primary.dark, 0.4)};

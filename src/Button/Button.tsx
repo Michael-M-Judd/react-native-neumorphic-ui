@@ -31,6 +31,7 @@ const StyledInnerButton = styled(View)`
   margin: 10px;
 `;
 
+/* stylelint-disable */
 const StyledTouchableOpacity = styled(TouchableOpacity)`
   background: ${getThemeColor('primary', 'light')};
   border: 2px solid ${getThemeColor('primary', 'light')};
@@ -38,6 +39,7 @@ const StyledTouchableOpacity = styled(TouchableOpacity)`
   position: relative;
   ${space}
 `;
+/* stylelint-enable */
 
 const StyledBottomShadow = styled(View)`
   box-shadow: 7px 7px 16px ${({ theme }) => hexToRgba(theme.palette.primary.dark, 0.35)};
