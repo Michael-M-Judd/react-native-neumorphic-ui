@@ -6,5 +6,6 @@ import Welcome from './Welcome';
 import '../../src/Button/Button.story';
 import '../../src/Card/Card.story';
 import '../../src/Box/Box.story';
+import '../../src/Typography/Typography.story';
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);

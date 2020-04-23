@@ -21,18 +21,18 @@ const StyledTouchableOpacity = styled(TouchableOpacity)`
 
 const StyledLinearGradient = styled(LinearGradient)<SpaceProps>`
   border-radius: ${getCardBorderRadius}px;
-  box-shadow: 7px 7px 16px ${({ theme }) => hexToRgba(theme.palette.primary.dark, 0.3)};
+  box-shadow: 7px 7px 16px ${({ theme }) => hexToRgba(theme.colors.primary.dark, 0.3)};
   padding: 20px;
   ${space}
 `;
 /* stylelint-enable */
 
 const StyledBottomShadow = styled(View)`
-  box-shadow: 7px 7px 16px ${({ theme }) => hexToRgba(theme.palette.primary.dark, 0.4)};
+  box-shadow: 7px 7px 16px ${({ theme }) => hexToRgba(theme.colors.primary.dark, 0.4)};
 `;
 
 export const StyledTopShadow = styled(View)`
-  box-shadow: -4px -4px 8px ${({ theme }) => hexToRgba(theme.palette.primary.light, 0.35)};
+  box-shadow: -4px -4px 8px ${({ theme }) => hexToRgba(theme.colors.primary.light, 0.35)};
 `;
 
 export const Card = ({
@@ -52,7 +52,7 @@ export const Card = ({
       <StyledTopShadow>
         <StyledBottomShadow>
           <StyledLinearGradient
-            colors={[theme.palette.primary.light, theme.palette.primary.main]}
+            colors={[theme.colors.primary.light, theme.colors.primary.main]}
             start={{ x: -10, y: -10 }}
             end={{ x: 1, y: 1 }}
             padding={padding}

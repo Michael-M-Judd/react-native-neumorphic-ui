@@ -1,7 +1,7 @@
 import { DefaultTheme } from './theme.types';
 
 export const theme: DefaultTheme = {
-  palette: {
+  colors: {
     common: {
       white: '#FFF',
       black: '#000'
@@ -32,5 +32,6 @@ export const theme: DefaultTheme = {
     fontWeightMedium: 500,
     fontWeightBold: 700
   },
+  fontSizes: [42, 32, 24, 16, 14],
   button: {}
 };

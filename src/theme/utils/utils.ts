@@ -1,12 +1,12 @@
 import { StyledProps, DefaultTheme, SpaceProps } from '../theme.types';
 
-type Palettes = keyof DefaultTheme['palette'];
+type Palettes = keyof DefaultTheme['colors'];
 
 export const getThemeColor = <T extends Palettes>(
   palette: T,
-  color: keyof DefaultTheme['palette'][T]
+  color: keyof DefaultTheme['colors'][T]
 ) => ({ theme }: StyledProps): string => {
-  const themeColor = theme.palette[palette][color];
+  const themeColor = theme.colors[palette][color];
 
   if (process.env.NODE_ENV !== 'production' && color === undefined) {
     console.warn('Theme color not found');

@@ -10,7 +10,7 @@ interface MainColor {
 // extend default theme
 declare module 'styled-components' {
   export interface DefaultTheme {
-    palette: {
+    colors: {
       primary: MainColor;
       secondary: MainColor;
       common: {
@@ -31,6 +31,7 @@ declare module 'styled-components' {
       fontWeightMedium: number;
       fontWeightBold: number;
     };
+    fontSizes: number[];
 
     button?: {
       borderRadius?: number;

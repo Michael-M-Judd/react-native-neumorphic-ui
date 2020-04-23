@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import styled from 'styled-components/native';
 
 const StyledView = styled(View)`
-  background: ${({ theme }) => theme.palette.primary.main};
+  background: ${({ theme }) => theme.colors.primary.main};
   padding-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
