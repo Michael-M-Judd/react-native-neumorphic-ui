@@ -5,7 +5,7 @@ import { StoryWrapper } from '../../storybook/StoryWrapper/StoryWrapper';
 import { Text } from 'react-native';
 
 storiesOf('Box', module)
-  .addDecorator((storyFn) => <StoryWrapper>{storyFn()}</StoryWrapper>)
+  .addDecorator((storyFn: Function) => <StoryWrapper>{storyFn()}</StoryWrapper>)
   .add('with spacing', () => (
     <Box margin={20} padding={30}>
       <Text style={{ color: 'white' }}>Box margin + padding</Text>

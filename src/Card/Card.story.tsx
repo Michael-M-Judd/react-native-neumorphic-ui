@@ -6,7 +6,7 @@ import { Text } from 'react-native';
 import { StoryWrapper } from '../../storybook/StoryWrapper/StoryWrapper';
 
 storiesOf('Card', module)
-  .addDecorator((storyFn) => <StoryWrapper>{storyFn()}</StoryWrapper>)
+  .addDecorator((storyFn: Function) => <StoryWrapper>{storyFn()}</StoryWrapper>)
   .add('default', () => (
     <Card onPress={action('pressed')}>
       <Text style={{ color: 'white' }}>Click me!</Text>

@@ -5,5 +5,5 @@ import { Button } from '.';
 import { StoryWrapper } from '../../storybook/StoryWrapper/StoryWrapper';
 
 storiesOf('Button', module)
-  .addDecorator(storyFn => <StoryWrapper>{storyFn()}</StoryWrapper>)
+  .addDecorator((storyFn: Function) => <StoryWrapper>{storyFn()}</StoryWrapper>)
   .add('default', () => <Button onPress={action('pressed')}>Click me!</Button>);
