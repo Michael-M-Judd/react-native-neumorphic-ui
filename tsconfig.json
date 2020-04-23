@@ -2,11 +2,16 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "jsx": "react-native",
-    "lib": ["dom", "esnext"],
+    "lib": ["esnext"],
+    "target": "ES2015",
+    "module": "commonjs",
     "moduleResolution": "node",
     "noEmit": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "strict": true
-  }
+    "strict": true,
+    "outDir": "./lib"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "**/*.test.*"]
 }

@@ -1,5 +1,7 @@
 {
   "name": "react-native-neumorphic-ui",
+  "author": "Michael Judd",
+  "license": "MIT",
   "keywords": [
     "neumorphic-ui",
     "neumorphism",
@@ -10,6 +12,7 @@
     "library"
   ],
   "description": "A react-native UI library implementing neumorphic design principles",
+  "version": "0.0.1",
   "main": "index.js",
   "scripts": {
     "android": "react-native run-android",
@@ -21,10 +24,18 @@
     "postinstall": "react-native link react-native-linear-gradient",
     "lint:js": "eslint src --ext ts,tsx,js,jsx",
     "lint:css": "stylelint 'src/**/*.ts*'",
-    "lint": "yarn lint:css yarn lint:js"
+    "lint": "yarn lint:css yarn lint:js",
+    "lint:fix": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Michael-M-Judd/react-native-neumorphic-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Michael-M-Judd/react-native-neumorphic-ui/issues"
   },
   "dependencies": {
-    "@types/styled-system": "^5.1.9",
     "react-native-linear-gradient": "^2.5.6",
     "styled-components": "^5.1.0",
     "styled-system": "^5.1.5"
@@ -40,10 +51,12 @@
     "@storybook/addons": "^5.3.18",
     "@storybook/react-native": "^5.3.18",
     "@storybook/react-native-server": "^5.3.18",
+    "@types/jest": "^25.2.1",
     "@types/react": "~16.9.23",
     "@types/react-native": "~0.61.23",
     "@types/storybook__react": "^5.2.1",
     "@types/styled-components": "^5.1.0",
+    "@types/styled-system": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",
     "babel-loader": "^8.1.0",
@@ -55,6 +68,7 @@
     "eslint-plugin-react-hooks": "^3.0.0",
     "expo": "~37.0.3",
     "expo-updates": "~0.1.0",
+    "jest": "^25.4.0",
     "jest-expo": "~37.0.0",
     "prettier": "^2.0.5",
     "react": "~16.9.0",
