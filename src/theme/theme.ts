@@ -22,6 +22,15 @@ export const theme: DefaultTheme = {
       primary: '#FFFFFF',
       secondary: '#9fb4da',
       disabled: '#475266'
+    },
+    error: {
+      main: '#ff004d'
+    },
+    warning: {
+      main: '#f6d743'
+    },
+    success: {
+      main: '#50d890'
     }
   },
   typography: {

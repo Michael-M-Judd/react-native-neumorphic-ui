@@ -22,6 +22,15 @@ declare module 'styled-components' {
         secondary: string;
         disabled: string;
       };
+      error: {
+        main: string;
+      };
+      warning: {
+        main: string;
+      };
+      success: {
+        main: string;
+      };
     };
     typography: {
       fontFamily: string;
